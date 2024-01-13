@@ -2,6 +2,7 @@ C:\sqlitedemo\src\main\java\information\portal\model\Employee.java
 C:\sqlitedemo\src\main\java\information\portal\mapper\EmployeeMapper.java
 C:\sqlitedemo\src\main\java\information\portal\service\impl\EmployeeServiceImpl.java
 C:\sqlitedemo\src\main\java\information\portal\controller\EmployeeController.java
+C:\sqlitedemo\src\main\java\com\example\sqlitedemo\SQLDialect.java
 C:\sqlitedemo\src\main\java\information\portal\service\EmployeeService.java
 C:\sqlitedemo\src\main\java\information\portal\SqlitedemoApplication.java
 C:\sqlitedemo\src\main\java\information\portal\dto\EmployeeDTO.java

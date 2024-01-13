@@ -1,4 +1,4 @@
-package com.example.sqlitedemo;
+package information.portal;
 
 import java.sql.Types;
 
