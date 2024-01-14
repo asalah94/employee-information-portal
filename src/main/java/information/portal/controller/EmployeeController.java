@@ -22,34 +22,33 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @GetMapping
-    public List<EmployeeDTO> getAllEmployees() {
-        return employeeService.getAllEmployees();
+    public ResponseEntity<List<EmployeeDTO>> getAllEmployees() {
+        List<EmployeeDTO> employeeDTOList = employeeService.getAllEmployees();
+        return new ResponseEntity<>(employeeDTOList, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public EmployeeDTO getEmployeeById(@PathVariable Long id) {
-        return employeeService.getEmployeeById(id);
+    public ResponseEntity<EmployeeDTO> getEmployeeById(@PathVariable Long id) {
+        EmployeeDTO foundEmployee = employeeService.getEmployeeById(id);
+        return new ResponseEntity<>(foundEmployee, HttpStatus.OK);
     }
 
     @PostMapping
-    public EmployeeDTO saveEmployee(@RequestBody EmployeeDTO employee) {
-        return employeeService.saveEmployee(employee);
+    public ResponseEntity<EmployeeDTO> saveEmployee(@RequestBody EmployeeDTO employee) {
+        EmployeeDTO savedEmployee = employeeService.saveEmployee(employee);
+        return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<EmployeeDTO> updateEmployee(@PathVariable Long id, @RequestBody EmployeeDTO updatedEmployee) {
-        try {
-            EmployeeDTO result = employeeService.updateEmployee(id, updatedEmployee);
-            return new ResponseEntity<>(result, HttpStatus.OK);
-        } catch (RuntimeException e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        EmployeeDTO result = employeeService.updateEmployee(id, updatedEmployee);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-
     @DeleteMapping("/{id}")
-    public void deleteEmployee(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteEmployee(@PathVariable Long id) {
         employeeService.deleteEmployee(id);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/search")
@@ -65,6 +64,4 @@ public class EmployeeController {
 
         return new ResponseEntity<>(employeesPage, HttpStatus.OK);
     }
-
-
 }
