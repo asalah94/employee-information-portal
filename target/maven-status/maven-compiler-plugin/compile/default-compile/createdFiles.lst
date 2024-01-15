@@ -7,3 +7,4 @@ information\portal\mapper\EmployeeMapper.class
 information\portal\SQLDialect.class
 information\portal\dto\EmployeeDTO.class
 information\portal\service\impl\EmployeeServiceImpl.class
+information\portal\exception\GlobalExceptionHandler.class
