@@ -78,7 +78,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         throw new RuntimeException("Unexpected error occurred while updating employee");
     }
 
-    private static void updateEmployeeFields(EmployeeDTO updatedEmployee, Employee existingEmployee) {
+    protected static void updateEmployeeFields(EmployeeDTO updatedEmployee, Employee existingEmployee) {
         existingEmployee.setFName(updatedEmployee.getFName());
         existingEmployee.setLName(updatedEmployee.getLName());
         existingEmployee.setPhone(updatedEmployee.getPhone());
