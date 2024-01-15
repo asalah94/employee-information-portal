@@ -9,10 +9,10 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>sqlitedemo</artifactId>
+	<artifactId>information-portal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>sqlitedemo</name>
-	<description>Demo project for Spring Boot Sqlite Integration</description>
+	<name>information-portal</name>
+	<description>employee information portal</description>
 
 	<properties>
 		<java.version>11</java.version>
